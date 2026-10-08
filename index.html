@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="sw" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Rungwa Secondary School, S/2598, 2795, Shule ya Sekondari Rungwa, Itigi, Singida, NECTA results, joining instructions">
+  <meta name="description" content="Rungwa Secondary School (Reg. No. S/2598, NECTA No. 2795) ipo Itigi, Singida. Tunatoa elimu bora na matokeo mazuri ya kidato cha nne na pili." />
+
+
+
+
+    
+    <title>Rungwa Secondary School | School No. 2795</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#0B192C',
+                            900: '#050C16',
+                            700: '#1E3E62'
+                        },
+                        gold: {
+                            500: '#C5A059',
+                            600: '#A68241',
+                            400: '#E2B86E'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
+        .glass-nav { background: rgba(11, 25, 44, 0.96); backdrop-filter: blur(12px); }
+        .hero-bg { background-size: cover; background-position: center; transition: background-image 0.5s ease-in-out; }
+        .subpage-hero { background-size: cover; background-position: center; transition: background-image 0.5s ease-in-out; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #C5A059; border-radius: 4px; }
+        .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+  
+
+
+    
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav text-white shadow-xl border-b border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <div class="flex items-center space-x-3 cursor-pointer group" onclick="switchView('home')">
+                <img id="navLogoImg" src="https://placehold.co/100x100/0B192C/C5A059?text=RSS" alt="Rungwa Logo" class="w-12 h-12 rounded-full border-2 border-gold-500 object-cover shadow-md group-hover:scale-105 transition">
+                <div>
+                    <h1 class="font-bold text-base sm:text-lg tracking-tight text-white flex items-center gap-2">
+                        Rungwa Secondary School
+                    </h1>
+                    <span class="text-xs text-gold-400 font-medium">Reg. No. S/2598 • NECTA No. 2795</span>
+                    <span class="block text-[10px] text-slate-400 italic font-medium">"Education for Liberation"</span>
+                </div>
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center space-x-1 font-medium text-sm">
+                <button onclick="switchView('home')" class="nav-link px-3.5 py-2 rounded-xl hover:bg-gold-500/20 hover:text-gold-400 transition" data-target="home">Home</button>
+                <button onclick="switchView('about')" class="nav-link px-3.5 py-2 rounded-xl hover:bg-gold-500/20 hover:text-gold-400 transition" data-target="about">About Us</button>
+                <button onclick="switchView('taaluma')" class="nav-link px-3.5 py-2 rounded-xl hover:bg-gold-500/20 hover:text-gold-400 transition" data-target="taaluma">Taaluma & NECTA</button>
+                <button onclick="switchView('news')" class="nav-link px-3.5 py-2 rounded-xl hover:bg-gold-500/20 hover:text-gold-400 transition" data-target="news">News & Events</button>
+                <button onclick="switchView('contact')" class="nav-link px-3.5 py-2 rounded-xl hover:bg-gold-500/20 hover:text-gold-400 transition" data-target="contact">Contact Us</button>
+                <button onclick="openAdminLoginModal()" class="ml-4 px-4 py-2.5 rounded-xl bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold transition shadow-lg flex items-center gap-2">
+                    <i class="fa-solid fa-lock text-xs"></i> Admin Portal
+                </button>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden text-2xl text-gold-400 focus:outline-none p-2">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-navy-900/98 border-b border-gold-500/20 px-6 py-6 space-y-3 shadow-2xl">
+            <button onclick="switchView('home'); toggleMobileMenu();" class="block w-full text-left py-2.5 px-4 rounded-xl hover:bg-gold-500/20 hover:text-gold-400 font-medium">Home</button>
+            <button onclick="switchView('about'); toggleMobileMenu();" class="block w-full text-left py-2.5 px-4 rounded-xl hover:bg-gold-500/20 hover:text-gold-400 font-medium">About Us</button>
+            <button onclick="switchView('taaluma'); toggleMobileMenu();" class="block w-full text-left py-2.5 px-4 rounded-xl hover:bg-gold-500/20 hover:text-gold-400 font-medium">Taaluma & NECTA</button>
+            <button onclick="switchView('news'); toggleMobileMenu();" class="block w-full text-left py-2.5 px-4 rounded-xl hover:bg-gold-500/20 hover:text-gold-400 font-medium">News & Events</button>
+            <button onclick="switchView('contact'); toggleMobileMenu();" class="block w-full text-left py-2.5 px-4 rounded-xl hover:bg-gold-500/20 hover:text-gold-400 font-medium">Contact Us</button>
+            <button onclick="openAdminLoginModal(); toggleMobileMenu();" class="w-full text-center py-3 bg-gold-500 text-navy-900 font-bold rounded-xl shadow">Admin Portal</button>
+        </div>
+    </header>
+
+    <main class="pt-20">
+
+        <!-- ==================== HOME VIEW ==================== -->
+        <section id="view-home" class="spa-view">
+            <!-- Hero Section -->
+            <div id="heroSection" class="relative hero-bg bg-navy-900 text-white py-32 lg:py-44" style="background-image: linear-gradient(rgba(5, 12, 22, 0.85), rgba(11, 25, 44, 0.9)), url('https://placehold.co/1920x1080/0b192c/ffffff?text=Rungwa+Secondary+School+Campus');">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-gold-500/20 border border-gold-500/40 text-gold-400 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-6 shadow-sm">
+                        KARIBU RUNGWA SECONDARY SCHOOL • REG. NO. S/2598 • NECTA NO. 2795
+                    </span>
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+                        Elimu Bora, Nidhamu na <span class="text-gold-400">Maendeleo</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-gold-400 font-semibold italic tracking-wide mb-4">"Education for Liberation"</p>
+                    <p class="max-w-3xl mx-auto text-lg sm:text-xl text-slate-300 mb-10 font-light leading-relaxed">
+                        Karibu kwenye tovuti rasmi ya Rungwa Secondary School iliyopo Kata ya Rungwa, Halmashauri ya Itigi, Mkoa wa Singida. Tunatoa elimu bora inayomjenga mwanafunzi kimaarifa, kimaadili na kiteknolojia.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <button onclick="switchView('about')" class="px-8 py-4 bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold rounded-xl shadow-xl transition transform hover:-translate-y-0.5">
+                            Kuhusu Shule Yetu →
+                        </button>
+                        <button onclick="switchView('taaluma')" class="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/30 font-bold rounded-xl backdrop-blur transition shadow-lg">
+                            Angalia Taaluma & NECTA
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Facts Bar -->
+            <div class="bg-navy-800 text-white py-8 border-b border-gold-500/30 shadow-inner">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-center">
+                    <div class="p-4 rounded-2xl bg-navy-900/60 border border-slate-700 shadow">
+                        <div class="text-3xl lg:text-4xl font-extrabold text-gold-400 mb-1">S/2598</div>
+                        <div class="text-xs sm:text-sm text-slate-300 font-medium">Namba ya Usajili wa Shule</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-navy-900/60 border border-slate-700 shadow">
+                        <div class="text-3xl lg:text-4xl font-extrabold text-gold-400 mb-1">2795</div>
+                        <div class="text-xs sm:text-sm text-slate-300 font-medium">Namba ya Usajili wa Mtihani (NECTA)</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-navy-900/60 border border-slate-700 shadow">
+                        <div class="text-3xl lg:text-4xl font-extrabold text-gold-400 mb-1">Rungwa</div>
+                        <div class="text-xs sm:text-sm text-slate-300 font-medium">Kata ya Shule</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-navy-900/60 border border-slate-700 shadow">
+                        <div class="text-3xl lg:text-4xl font-extrabold text-gold-400 mb-1">Itigi</div>
+                        <div class="text-xs sm:text-sm text-slate-300 font-medium">Halmashauri</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-navy-900/60 border border-slate-700 shadow">
+                        <div class="text-3xl lg:text-4xl font-extrabold text-gold-400 mb-1">Singida</div>
+                        <div class="text-xs sm:text-sm text-slate-300 font-medium">Mkoa wa Tanzania</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Welcome Section -->
+            <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="text-gold-600 font-bold tracking-wider text-xs uppercase bg-gold-500/10 px-3.5 py-1.5 rounded-full">HISTORIA NA UTAMBULISHO</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 mt-3 mb-6">Karibu Rungwa Secondary School</h2>
+                        <p class="text-slate-600 text-lg leading-relaxed mb-4">
+                            Rungwa Secondary School ni shule ya sekondari iliyopo katika Kata ya Rungwa, Halmashauri ya Itigi, Mkoa wa Singida, Tanzania. Shule inalenga kutoa elimu bora inayomjengea mwanafunzi maarifa, ujuzi, nidhamu, ubunifu na maadili mema yanayomwezesha kushiriki kikamilifu katika maendeleo ya jamii na taifa.
+                        </p>
+                        <p class="text-slate-600 leading-relaxed mb-6">
+                            Tunashirikiana na wanafunzi, wazazi, walimu pamoja na jamii katika kuhakikisha mazingira bora ya kujifunzia na kufundishia yanaendelea kuwepo kwa manufaa ya vizazi vijavyo.
+                        </p>
+                        <button onclick="switchView('about')" class="inline-flex items-center gap-2 text-navy-900 font-bold hover:text-gold-600 transition">
+                            Soma maelezo kamili ya shule <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="relative">
+                        <img id="homeSectionImg" src="https://placehold.co/800x600/1E3E62/ffffff?text=Rungwa+School+Life" alt="Rungwa School Life" class="rounded-3xl shadow-2xl border-4 border-white object-cover w-full h-[400px]">
+                        <div class="absolute -bottom-6 -right-6 bg-gold-500 text-navy-900 p-6 rounded-3xl shadow-xl hidden sm:block border border-gold-400">
+                            <p class="font-black text-2xl">100%</p>
+                            <p class="text-xs font-bold uppercase tracking-wider">Commitment to Excellence</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dynamic Gallery Section -->
+            <section class="py-20 bg-slate-100 border-y border-slate-200">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-2xl mx-auto mb-12">
+                        <span class="text-gold-600 font-bold text-xs uppercase tracking-wider bg-gold-500/10 px-3 py-1 rounded-full">GALLERY & CAMPUS LIFE</span>
+                        <h2 class="text-3xl font-extrabold text-navy-900 mt-3">Picha za Shule na Matukio</h2>
+                        <p class="text-slate-600 mt-2">Tazama picha mbalimbali zilizopakiwa na uongozi wa shule.</p>
+                    </div>
+                    <div id="homeGalleryGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Dynamic items inserted via JS -->
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- ==================== ABOUT US VIEW ==================== -->
+        <section id="view-about" class="spa-view hidden">
+            <div id="subpageHeroBanner" class="subpage-hero bg-navy-900 text-white py-24 relative" style="background-image: linear-gradient(rgba(5, 12, 22, 0.85), rgba(11, 25, 44, 0.9)), url('https://placehold.co/1920x600/0b192c/ffffff?text=Rungwa+Secondary+School');">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                    <span class="text-gold-400 font-semibold tracking-widest text-xs uppercase bg-gold-500/20 px-3 py-1 rounded-full">RUNGWA SECONDARY SCHOOL</span>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold mt-3 mb-3">About Us</h1>
+                    <p class="text-slate-300 text-sm">Home / About Us</p>
+                </div>
+            </div>
+
+            <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+                    <div>
+                        <span class="text-gold-600 font-bold text-xs uppercase tracking-wider bg-gold-500/10 px-3 py-1 rounded-full">KUHUSA SISI</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 mt-3 mb-6">Karibu Rungwa Secondary School</h2>
+                        <p class="text-slate-600 text-lg leading-relaxed mb-4">
+                            Rungwa Secondary School ni shule ya sekondari iliyopo katika Kata ya Rungwa, Halmashauri ya Itigi, Mkoa wa Singida, Tanzania.
+                        </p>
+                        <p class="text-slate-600 leading-relaxed mb-4">
+                            Shule inalenga kutoa elimu bora inayomjengea mwanafunzi maarifa, ujuzi, nidhamu, ubunifu na maadili mema yanayomwezesha kushiriki kikamilifu katika maendeleo ya jamii na taifa.
+                        </p>
+                    </div>
+                    <div class="bg-navy-900 p-8 sm:p-10 rounded-3xl text-white shadow-2xl border border-gold-500/30">
+                        <h3 class="text-2xl font-bold text-gold-400 mb-6 flex items-center gap-3">
+                            <i class="fa-solid fa-school"></i> Taarifa za Shule
+                        </h3>
+                        <div class="space-y-4 text-slate-300 text-sm">
+                            <div class="flex justify-between border-b border-slate-700/80 pb-3"><span class="font-medium text-white">Jina la Shule:</span> <span>Rungwa Secondary School</span></div>
+                            <div class="flex justify-between border-b border-slate-700/80 pb-3"><span class="font-medium text-white">Namba ya Usajili wa Shule:</span> <span class="text-gold-400 font-bold">S/2598</span></div>
+                            <div class="flex justify-between border-b border-slate-700/80 pb-3"><span class="font-medium text-white">Namba ya Usajili wa Mtihani (NECTA):</span> <span class="text-gold-400 font-bold">2795</span></div>
+                            <div class="flex justify-between border-b border-slate-700/80 pb-3"><span class="font-medium text-white">Kauli Mbiu (Motto):</span> <span class="text-gold-400 font-semibold italic">Education for Liberation</span></div>
+                            <div class="flex justify-between border-b border-slate-700/80 pb-3"><span class="font-medium text-white">Kata:</span> <span>Rungwa</span></div>
+                            <div class="flex justify-between border-b border-slate-700/80 pb-3"><span class="font-medium text-white">Halmashauri:</span> <span>Itigi</span></div>
+                            <div class="flex justify-between border-b border-slate-700/80 pb-3"><span class="font-medium text-white">Mkoa:</span> <span>Singida, Tanzania</span></div>
+                            <div class="flex justify-between"><span class="font-medium text-white">Anuani:</span> <span>S.L.P 70, Itigi</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-20">
+                    <div class="bg-white p-8 sm:p-10 rounded-3xl shadow-xl border border-slate-200 card-hover">
+                        <div class="w-14 h-14 bg-navy-900 text-gold-400 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 shadow">👁️</div>
+                        <h3 class="text-2xl font-bold text-navy-900 mb-3">Dira ya Shule</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Kuwa shule yenye kutoa elimu bora na kujenga wanafunzi wenye maarifa, ujuzi, nidhamu na uwezo wa kuchangia maendeleo ya jamii na taifa.
+                        </p>
+                    </div>
+                    <div class="bg-white p-8 sm:p-10 rounded-3xl shadow-xl border border-slate-200 card-hover">
+                        <div class="w-14 h-14 bg-navy-900 text-gold-400 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 shadow">🎯</div>
+                        <h3 class="text-2xl font-bold text-navy-900 mb-3">Dhima ya Shule</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Kutoa elimu bora kwa kuzingatia taaluma, maadili, nidhamu, ubunifu na matumizi sahihi ya rasilimali ili kuwaandaa wanafunzi kwa maisha na maendeleo ya taifa.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- ==================== TAALUMA & NECTA VIEW ==================== -->
+        <section id="view-taaluma" class="spa-view hidden">
+            <div class="subpageHeroBannerCloned subpage-hero bg-navy-900 text-white py-24 relative" style="background-image: linear-gradient(rgba(5, 12, 22, 0.85), rgba(11, 25, 44, 0.9)), url('https://placehold.co/1920x600/0b192c/ffffff?text=Taaluma+na+Matokeo');">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                    <span class="text-gold-400 font-semibold tracking-widest text-xs uppercase bg-gold-500/20 px-3 py-1 rounded-full">RUNGWA SECONDARY SCHOOL</span>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold mt-3 mb-3">Taaluma & NECTA Results</h1>
+                    <p class="text-slate-300 text-sm">Home / Taaluma</p>
+                </div>
+            </div>
+
+            <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+                    <div>
+                        <span class="text-gold-600 font-bold text-xs uppercase tracking-wider bg-gold-500/10 px-3 py-1 rounded-full">TAALUMA</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 mt-3 mb-6">Elimu Bora kwa Maendeleo ya Mwanafunzi</h2>
+                        <p class="text-slate-600 text-lg leading-relaxed mb-4">
+                            Rungwa Secondary School inatilia mkazo taaluma na maendeleo ya mwanafunzi katika nyanja mbalimbali za elimu. Shule inatoa masomo mbalimbali katika Idara za Sayansi na Hisabati, Sanaa pamoja na Biashara.
+                        </p>
+                    </div>
+                    <div class="bg-gradient-to-br from-navy-900 to-navy-700 text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-gold-500/30">
+                        <div class="text-4xl mb-4">🎓</div>
+                        <h3 class="text-2xl font-bold mb-3 text-gold-400">Academic Excellence</h3>
+                        <p class="text-slate-300 leading-relaxed">
+                            Tunawaandaa wanafunzi kuwa na maarifa, ujuzi, ubunifu na uwezo wa kutatua changamoto katika maisha ya kila siku kupitia walimu mahiri na mitaala iliyothibitishwa.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Uploaded Student Results Section (Classified by Form Level) -->
+                <div id="publicStudentResultsSection" class="mb-16 hidden">
+                    <div class="flex items-center justify-between mb-6 border-b border-slate-300 pb-4">
+                        <div>
+                            <span class="text-xs font-bold text-gold-600 tracking-wider">MATOKEO YA MITIHANI YA NDANI</span>
+                            <h3 class="text-2xl font-bold text-navy-900">Matokeo ya Wanafunzi (Yaliyowekwa na Shule)</h3>
+                        </div>
+                        <span class="text-3xl">📑</span>
+                    </div>
+                    <div id="publicStudentResultsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                </div>
+
+                <!-- NECTA Results Section -->
+                <div class="bg-slate-100 p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-inner">
+                    <div class="text-center max-w-2xl mx-auto mb-12">
+                        <span class="text-gold-600 font-bold text-xs uppercase tracking-wider">NECTA RESULTS</span>
+                        <h2 class="text-3xl font-extrabold text-navy-900 mt-2">Matokeo ya Mitihani ya Taifa</h2>
+                        <p class="text-slate-600 mt-2">Angalia matokeo ya Rungwa Secondary School (S2795) kupitia mfumo rasmi wa NECTA.</p>
+                    </div>
+
+                    <!-- CSEE Results (Kidato cha Nne) -->
+                    <div class="mb-12">
+                        <div class="flex items-center justify-between mb-6 border-b border-slate-300 pb-4">
+                            <div>
+                                <span class="text-xs font-bold text-gold-600 tracking-wider">KIDATO CHA NNE</span>
+                                <h3 class="text-2xl font-bold text-navy-900">CSEE Results (School No. S2795)</h3>
+                            </div>
+                            <span class="text-3xl">🎓</span>
+                        </div>
+                        <div class="grid sm:grid-cols-3 gap-6">
+                            <div class="bg-white p-6 rounded-2xl shadow border border-slate-200">
+                                <div class="text-gold-600 font-extrabold text-lg mb-1">2025</div>
+                                <h4 class="font-bold text-navy-900 mb-2">CSEE 2025</h4>
+                                <p class="text-xs text-slate-600 mb-4">Matokeo rasmi ya Kidato cha Nne 2025.</p>
+                                <a href="https://onlinesys.necta.go.tz/results/2025/csee/results/s2795.htm" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-navy-900 bg-gold-500 hover:bg-gold-600 px-4 py-2 rounded-xl transition">Angalia NECTA ↗</a>
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl shadow border border-slate-200">
+                                <div class="text-gold-600 font-extrabold text-lg mb-1">2024</div>
+                                <h4 class="font-bold text-navy-900 mb-2">CSEE 2024</h4>
+                                <p class="text-xs text-slate-600 mb-4">Matokeo rasmi ya Kidato cha Nne 2024.</p>
+                                <a href="https://onlinesys.necta.go.tz/results/2024/csee/results/s2795.htm" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-navy-900 bg-gold-500 hover:bg-gold-600 px-4 py-2 rounded-xl transition">Angalia NECTA ↗</a>
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl shadow border border-slate-200">
+                                <div class="text-gold-600 font-extrabold text-lg mb-1">2023</div>
+                                <h4 class="font-bold text-navy-900 mb-2">CSEE 2023</h4>
+                                <p class="text-xs text-slate-600 mb-4">Matokeo rasmi ya Kidato cha Nne 2023.</p>
+                                <a href="https://onlinesys.necta.go.tz/results/2023/csee/results/s2795.htm" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-navy-900 bg-gold-500 hover:bg-gold-600 px-4 py-2 rounded-xl transition">Angalia NECTA ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FTNA Results (Kidato cha Pili) -->
+                    <div>
+                        <div class="flex items-center justify-between mb-6 border-b border-slate-300 pb-4">
+                            <div>
+                                <span class="text-xs font-bold text-gold-600 tracking-wider">KIDATO CHA PILI</span>
+                                <h3 class="text-2xl font-bold text-navy-900">FTNA Results</h3>
+                            </div>
+                            <span class="text-3xl">📊</span>
+                        </div>
+                        <div class="grid sm:grid-cols-3 gap-6">
+                            <div class="bg-white p-6 rounded-2xl shadow border border-slate-200">
+                                <div class="text-gold-600 font-extrabold text-lg mb-1">2025</div>
+                                <h4 class="font-bold text-navy-900 mb-2">FTNA 2025</h4>
+                                <p class="text-xs text-slate-600 mb-4">Matokeo ya Kidato cha Pili 2025.</p>
+                                <a href="https://necta.go.tz/results/view/ftna" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-navy-900 bg-gold-500 hover:bg-gold-600 px-4 py-2 rounded-xl transition">Angalia NECTA ↗</a>
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl shadow border border-slate-200">
+                                <div class="text-gold-600 font-extrabold text-lg mb-1">2024</div>
+                                <h4 class="font-bold text-navy-900 mb-2">FTNA 2024</h4>
+                                <p class="text-xs text-slate-600 mb-4">Matokeo ya Kidato cha Pili 2024.</p>
+                                <a href="https://necta.go.tz/results/view/ftna" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-navy-900 bg-gold-500 hover:bg-gold-600 px-4 py-2 rounded-xl transition">Angalia NECTA ↗</a>
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl shadow border border-slate-200">
+                                <div class="text-gold-600 font-extrabold text-lg mb-1">2023</div>
+                                <h4 class="font-bold text-navy-900 mb-2">FTNA 2023</h4>
+                                <p class="text-xs text-slate-600 mb-4">Matokeo ya Kidato cha Pili 2023.</p>
+                                <a href="https://necta.go.tz/results/view/ftna" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-navy-900 bg-gold-500 hover:bg-gold-600 px-4 py-2 rounded-xl transition">Angalia NECTA ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Admin Uploaded Results Links Container -->
+                    <div id="dynamicAcademicResultsContainer" class="mt-12 hidden">
+                        <h3 class="text-xl font-bold text-navy-900 mb-4">Rasilimali Nyingine Zilizowekwa na Admin</h3>
+                        <div id="dynamicAcademicList" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- ==================== NEWS & EVENTS VIEW ==================== -->
+        <section id="view-news" class="spa-view hidden">
+            <div class="subpageHeroBannerCloned subpage-hero bg-navy-900 text-white py-24 relative" style="background-image: linear-gradient(rgba(5, 12, 22, 0.85), rgba(11, 25, 44, 0.9)), url('https://placehold.co/1920x600/0b192c/ffffff?text=News+and+Announcements');">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                    <span class="text-gold-400 font-semibold tracking-widest text-xs uppercase bg-gold-500/20 px-3 py-1 rounded-full">RUNGWA SECONDARY SCHOOL</span>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold mt-3 mb-3">News, Events & Announcements</h1>
+                    <p class="text-slate-300 text-sm">Habari, Matukio, Matangazo na Documents</p>
+                </div>
+            </div>
+
+            <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-center mb-12 border-b border-slate-200">
+                    <div class="flex space-x-2 sm:space-x-6 pb-4">
+                        <button onclick="switchNewsTab('latest')" id="tabBtn-latest" class="news-tab-btn px-6 py-3 rounded-2xl font-bold text-sm bg-navy-900 text-white shadow transition flex items-center gap-2">
+                            <i class="fa-solid fa-newspaper"></i> Latest News
+                        </button>
+                        <button onclick="switchNewsTab('events')" id="tabBtn-events" class="news-tab-btn px-6 py-3 rounded-2xl font-bold text-sm bg-slate-200 text-slate-700 hover:bg-slate-300 transition flex items-center gap-2">
+                            <i class="fa-solid fa-calendar-days"></i> Events
+                        </button>
+                        <button onclick="switchNewsTab('announcements')" id="tabBtn-announcements" class="news-tab-btn px-6 py-3 rounded-2xl font-bold text-sm bg-slate-200 text-slate-700 hover:bg-slate-300 transition flex items-center gap-2">
+                            <i class="fa-solid fa-bullhorn"></i> Announcements
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tab Content: Latest News -->
+                <div id="newsTab-latest" class="news-tab-content">
+                    <div class="grid md:grid-cols-3 gap-8" id="latestNewsGrid"></div>
+                </div>
+
+                <!-- Tab Content: Events -->
+                <div id="newsTab-events" class="news-tab-content hidden">
+                    <div class="grid md:grid-cols-3 gap-8" id="eventsGrid"></div>
+                </div>
+
+                <!-- Tab Content: Announcements -->
+                <div id="newsTab-announcements" class="news-tab-content hidden">
+                    <div class="space-y-6" id="announcementsList"></div>
+                </div>
+
+                <!-- Joining Instructions Section -->
+                <div class="mt-20 bg-navy-900 text-white p-8 sm:p-12 rounded-3xl border border-gold-500/30 shadow-2xl">
+                    <div class="text-center max-w-2xl mx-auto mb-10">
+                        <span class="text-gold-400 font-bold text-xs uppercase tracking-wider">JOINING INSTRUCTIONS</span>
+                        <h2 class="text-3xl font-extrabold mt-2">Maelekezo ya Kujiunga na Shule</h2>
+                        <p class="text-slate-300 mt-2">Pakua fomu na maelekezo ya kujiunga na Rungwa Secondary School kwa mwaka husika.</p>
+                    </div>
+                    <div id="joiningInstructionsList" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                </div>
+            </section>
+        </section>
+
+        <!-- ==================== CONTACT US VIEW ==================== -->
+        <section id="view-contact" class="spa-view hidden">
+            <div class="subpageHeroBannerCloned subpage-hero bg-navy-900 text-white py-24 relative" style="background-image: linear-gradient(rgba(5, 12, 22, 0.85), rgba(11, 25, 44, 0.9)), url('https://placehold.co/1920x600/0b192c/ffffff?text=Contact+Rungwa+Secondary');">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                    <span class="text-gold-400 font-semibold tracking-widest text-xs uppercase bg-gold-500/20 px-3 py-1 rounded-full">RUNGWA SECONDARY SCHOOL</span>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold mt-3 mb-3">Contact Us</h1>
+                    <p class="text-slate-300 text-sm">Wasiliana nasi kwa simu, email au fomu ya ujumbe</p>
+                </div>
+            </div>
+
+            <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                    <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-200 text-center card-hover">
+                        <div class="text-3xl mb-4">📍</div>
+                        <h3 class="font-bold text-navy-900 text-lg mb-2">Address</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">S.L.P 70, Itigi<br>Kata: Rungwa<br>Halmashauri: Itigi<br>Mkoa: Singida, Tanzania</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-200 text-center card-hover">
+                        <div class="text-3xl mb-4">📞</div>
+                        <h3 class="font-bold text-navy-900 text-lg mb-2">Phone</h3>
+                        <p class="text-slate-600 text-xs mb-4">0622036521  &  0753088310</p>
+                        <a href="tel:0622036521" class="text-xs font-bold text-gold-600 hover:underline">Piga Simu →</a>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-200 text-center card-hover">
+                        <div class="text-3xl mb-4">✉️</div>
+                        <h3 class="font-bold text-navy-900 text-lg mb-2">Email</h3>
+                        <p class="text-slate-600 text-xs mb-4">secondaryrungwa@gmail.com</p>
+                        <a href="mailto:secondaryrungwa@gmail.com" class="text-xs font-bold text-gold-600 hover:underline">Tuma Email →</a>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-200 text-center card-hover">
+                        <div class="text-3xl mb-4">🏫</div>
+                        <h3 class="font-bold text-navy-900 text-lg mb-2">Namba za Usajili</h3>
+                        <p class="text-gold-600 font-bold text-sm mb-1">Shule: S/2598</p>
+                        <p class="text-gold-600 font-bold text-sm mb-1">NECTA: 2795</p>
+                        <span class="text-slate-500 text-xs">Rungwa Secondary School</span>
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12 items-start">
+                    <div class="bg-white p-8 sm:p-12 rounded-3xl shadow-2xl border border-slate-200">
+                        <span class="text-gold-600 font-bold text-xs uppercase tracking-wider bg-gold-500/10 px-3 py-1 rounded-full">SEND MESSAGE</span>
+                        <h2 class="text-3xl font-extrabold text-navy-900 mt-3 mb-6">Tuma Ujumbe</h2>
+                        <form id="contactFormSpa" onsubmit="handleContactSubmission(event)" class="space-y-6">
+                            <div class="grid sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Jina Kamili</label>
+                                    <input type="text" id="contactName" required class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold-500 focus:outline-none text-sm" placeholder="Andika jina lako">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Email</label>
+                                    <input type="email" id="contactEmail" required class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold-500 focus:outline-none text-sm" placeholder="mfano@gmail.com">
+                                </div>
+                            </div>
+                            <div class="grid sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Namba ya Simu</label>
+                                    <input type="tel" id="contactPhone" class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold-500 focus:outline-none text-sm" placeholder="07XXXXXXXX">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Mada</label>
+                                    <select id="contactSubject" required class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold-500 focus:outline-none text-sm bg-white">
+                                        <option value="">-- Chagua Mada --</option>
+                                        <option value="Admission / Kujiunga">Admission / Kujiunga</option>
+                                        <option value="Taaluma">Taaluma</option>
+                                        <option value="Joining Instructions">Joining Instructions</option>
+                                        <option value="Results">Results</option>
+                                        <option value="General Inquiry">General Inquiry</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Ujumbe</label>
+                                <textarea id="contactMessageText" rows="5" required class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold-500 focus:outline-none text-sm" placeholder="Andika ujumbe wako hapa..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-4 bg-navy-900 hover:bg-navy-800 text-white font-bold rounded-xl shadow-xl transition flex items-center justify-center gap-2">
+                                Tuma Ujumbe →
+                            </button>
+                            <div id="contactFormStatus" class="text-center text-sm font-semibold"></div>
+                        </form>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div class="bg-navy-900 text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-gold-500/30">
+                            <h3 class="text-2xl font-bold text-gold-400 mb-6">Masaa ya Ofisi</h3>
+                            <div class="space-y-4 text-slate-300 text-sm">
+                                <div class="flex justify-between border-b border-slate-700 pb-3">
+                                    <span class="font-medium text-white">Monday – Friday</span>
+                                    <span>08:00 AM – 04:00 PM</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-700 pb-3">
+                                    <span class="font-medium text-white">Saturday</span>
+                                    <span>08:00 AM – 01:00 PM</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="font-medium text-white">Sunday</span>
+                                    <span class="text-red-400">Closed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- ==================== SECURE ADMIN DASHBOARD VIEW ==================== -->
+        <section id="view-admin" class="spa-view hidden bg-slate-100 min-h-screen py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Admin Header Bar -->
+                <div class="bg-navy-900 text-white p-6 sm:p-10 rounded-3xl shadow-2xl mb-8 flex flex-col sm:flex-row justify-between items-center gap-4 border border-gold-500/20">
+                    <div>
+                        <span class="text-gold-400 font-semibold text-xs uppercase tracking-wider bg-gold-500/20 px-3 py-1 rounded-full">ADMINISTRATION PORTAL</span>
+                        <h1 class="text-3xl font-extrabold mt-2">School Management Dashboard</h1>
+                        <p class="text-slate-300 text-xs mt-1">Logged in securely as Administrator (Rungwa Secondary School No. 2795)</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button onclick="switchView('home')" class="px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-xl text-xs font-bold transition shadow">View Website</button>
+                        <button onclick="logoutAdmin()" class="px-4 py-2.5 bg-red-600 hover:bg-red-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-2 shadow"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                    </div>
+                </div>
+
+                <!-- Admin Stats Overview -->
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-200 flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gold-500/10 text-gold-600 rounded-2xl flex items-center justify-center text-xl font-bold">📰</div>
+                        <div><h3 id="statNewsCount" class="text-2xl font-extrabold text-navy-900">0</h3><p class="text-xs text-slate-500 font-medium">Habari & Announcements</p></div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-200 flex items-center gap-4">
+                        <div class="w-12 h-12 bg-blue-500/10 text-blue-600 rounded-2xl flex items-center justify-center text-xl font-bold">📅</div>
+                        <div><h3 id="statEventsCount" class="text-2xl font-extrabold text-navy-900">0</h3><p class="text-xs text-slate-500 font-medium">Events</p></div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-200 flex items-center gap-4">
+                        <div class="w-12 h-12 bg-green-500/10 text-green-600 rounded-2xl flex items-center justify-center text-xl font-bold">✉️</div>
+                        <div><h3 id="statMessagesCount" class="text-2xl font-extrabold text-navy-900">0</h3><p class="text-xs text-slate-500 font-medium">Received Messages</p></div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-200 flex items-center gap-4">
+                        <div class="w-12 h-12 bg-purple-500/10 text-purple-600 rounded-2xl flex items-center justify-center text-xl font-bold">📄</div>
+                        <div><h3 id="statJoiningCount" class="text-2xl font-extrabold text-navy-900">0</h3><p class="text-xs text-slate-500 font-medium">Joining Instructions</p></div>
+                    </div>
+                </div>
+
+                <!-- Admin Management Grid -->
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Left 2 Cols: Forms & Management Lists -->
+                    <div class="lg:col-span-2 space-y-8">
+                        <!-- 1. Post News / Event / Announcement (With Optional Document Upload) -->
+                        <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-200">
+                            <h2 class="text-xl font-bold text-navy-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-pen-to-square text-gold-600"></i> Post News / Event / Announcement</h2>
+                            <form onsubmit="handleAdminPublishContent(event)" class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Select Category</label>
+                                    <select id="adminPostCategory" required class="w-full px-4 py-3.5 rounded-xl border border-slate-300 text-sm bg-white focus:ring-2 focus:ring-gold-500">
+                                        <option value="latest">Latest News (Habari Mpya)</option>
+                                        <option value="events">Events (Matukio)</option>
+                                        <option value="announcements">Announcements (Matangazo)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Title / Heading</label>
+                                    <input type="text" id="adminPostTitle" required class="w-full px-4 py-3.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-gold-500" placeholder="Andika kichwa cha habari...">
+                                </div>
+                                <div class="grid sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Picha ya Taarifa (Optional)</label>
+                                        <input type="file" id="adminPostImage" accept="image/*" class="w-full text-xs text-slate-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-gold-500 file:text-navy-900 hover:file:bg-gold-600">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Upload Document (Optional)</label>
+                                        <input type="file" id="adminPostDoc" accept=".pdf,.doc,.docx,.xls,.xlsx" class="w-full text-xs text-slate-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-gold-500 file:text-navy-900 hover:file:bg-gold-600">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Content / Description (Optional if document attached)</label>
+                                    <textarea id="adminPostDesc" rows="3" class="w-full px-4 py-3.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-gold-500" placeholder="Andika maelezo kamili au ambatanisha document..."></textarea>
+                                </div>
+                                <button type="submit" class="px-6 py-3.5 bg-navy-900 hover:bg-navy-800 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition shadow">Chapisha Taarifa →</button>
+                            </form>
+                        </div>
+
+                        <!-- 2. NEW: Upload Student Results (Matokeo ya Wanafunzi na Kidato chake) -->
+                        <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-200">
+                            <h2 class="text-xl font-bold text-navy-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-file-arrow-up text-gold-600"></i> Upload Matokeo ya Wanafunzi (Student Exam Results)</h2>
+                            <form onsubmit="handleStudentResultUpload(event)" class="space-y-4">
+                                <div class="grid sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Kidato / Form Level</label>
+                                        <select id="adminResultFormLevel" required class="w-full px-4 py-3.5 rounded-xl border border-slate-300 text-sm bg-white">
+                                            <option value="">-- Chagua Kidato --</option>
+                                            <option value="Kidato cha Kwanza (Form I)">Kidato cha Kwanza (Form I)</option>
+                                            <option value="Kidato cha Pili (Form II)">Kidato cha Pili (Form II)</option>
+                                            <option value="Kidato cha Tatu (Form III)">Kidato cha Tatu (Form III)</option>
+                                            <option value="Kidato cha Nne (Form IV)">Kidato cha Nne (Form IV)</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Kichwa cha Habari / Title</label>
+                                        <input type="text" id="adminResultTitle" required placeholder="mfano: Matokeo ya Muhula wa Kwanza 2026" class="w-full px-4 py-3.5 rounded-xl border border-slate-300 text-sm">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Results Document (PDF au File)</label>
+                                    <input type="file" id="adminResultFile" accept=".pdf,.doc,.docx,.xls,.xlsx" required class="w-full text-xs text-slate-500 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:bg-navy-900 file:text-white">
+                                </div>
+                                <button type="submit" class="px-6 py-3.5 bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold rounded-xl text-xs uppercase tracking-wider transition shadow">Upload Student Results File →</button>
+                            </form>
+                        </div>
+
+                        <!-- 3. Dynamic Visual Asset Uploads -->
+                        <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-200">
+                            <h2 class="text-xl font-bold text-navy-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-image text-gold-600"></i> Dynamic Visual Asset & Frame Uploads</h2>
+                            <div class="space-y-6">
+                                <div class="grid sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">School Logo Image</label>
+                                        <input type="file" accept="image/*" onchange="handleLogoUpload(event)" class="w-full text-xs text-slate-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-gold-500 file:text-navy-900 hover:file:bg-gold-600">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Rungwa School Life Frame Image</label>
+                                        <input type="file" accept="image/*" onchange="handleSchoolLifeUpload(event)" class="w-full text-xs text-slate-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-gold-500 file:text-navy-900 hover:file:bg-gold-600">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Unified Subpage Banner</label>
+                                    <input type="file" accept="image/*" onchange="handleUnifiedSubpageBannerUpload(event)" class="w-full text-xs text-slate-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-gold-500 file:text-navy-900 hover:file:bg-gold-600">
+                                </div>
+                                <div class="border-t border-slate-200 pt-6">
+                                    <h3 class="text-sm font-bold text-navy-900 mb-3"><i class="fa-solid fa-camera text-gold-600"></i> Upload Gallery Photo (Description Optional)</h3>
+                                    <form onsubmit="handleGalleryUploadWithDesc(event)" class="space-y-4">
+                                        <div class="grid sm:grid-cols-2 gap-4">
+                                            <div>
+                                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Select Photo</label>
+                                                <input type="file" id="adminGalleryFile" accept="image/*" required class="w-full text-xs text-slate-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-gold-500 file:text-navy-900 hover:file:bg-gold-600">
+                                            </div>
+                                            <div>
+                                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Description (Optional)</label>
+                                                <input type="text" id="adminGalleryDesc" placeholder="Acha wazi kama hutaki maelezo" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-gold-500">
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="px-6 py-3 bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold rounded-xl text-xs uppercase tracking-wider transition shadow">Upload Gallery Photo →</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Documents & Joining Instructions Upload -->
+                        <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-200">
+                            <h2 class="text-xl font-bold text-navy-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-file-pdf text-gold-600"></i> Upload Joining Instructions (PDF)</h2>
+                            <form onsubmit="handleJoiningUpload(event)" class="space-y-4">
+                                <div class="grid sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Mwaka (Year)</label>
+                                        <select id="adminJoiningYear" required class="w-full px-4 py-3.5 rounded-xl border border-slate-300 text-sm bg-white">
+                                            <option value="">-- Chagua Mwaka --</option>
+                                            <option value="2028">2028</option>
+                                            <option value="2027">2027</option>
+                                            <option value="2026">2026</option>
+                                            <option value="2025">2025</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">PDF Document</label>
+                                        <input type="file" id="adminJoiningFile" accept="application/pdf" required class="w-full text-xs text-slate-500 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:bg-navy-900 file:text-white">
+                                    </div>
+                                </div>
+                                <button type="submit" class="px-6 py-3.5 bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold rounded-xl text-xs uppercase tracking-wider transition shadow">Upload Joining PDF →</button>
+                            </form>
+                        </div>
+
+                        <!-- 5. Academic NECTA Results Link Upload -->
+                        <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-200">
+                            <h2 class="text-xl font-bold text-navy-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-graduation-cap text-gold-600"></i> Upload External Academic / NECTA Link</h2>
+                            <form onsubmit="handleAcademicUpload(event)" class="space-y-4">
+                                <div class="grid sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Exam / Title</label>
+                                        <input type="text" id="adminAcademicTitle" required placeholder="mfano: CSEE 2026 Results" class="w-full px-4 py-3.5 rounded-xl border border-slate-300 text-sm">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">External Link / PDF URL</label>
+                                        <input type="url" id="adminAcademicUrl" required placeholder="https://onlinesys.necta.go.tz/..." class="w-full px-4 py-3.5 rounded-xl border border-slate-300 text-sm">
+                                    </div>
+                                </div>
+                                <button type="submit" class="px-6 py-3.5 bg-navy-900 hover:bg-navy-800 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition shadow">Append Academic Result →</button>
+                            </form>
+                        </div>
+
+                        <!-- 6. Admin Uploaded Content Management & Deletion List (Files Expiry & Deletion) -->
+                        <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-200">
+                            <h2 class="text-xl font-bold text-navy-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-trash-can text-red-600"></i> Manage & Delete Uploaded Files & Data</h2>
+                            <p class="text-slate-500 text-xs mb-6">Orodha ya picha, logo, taarifa, na files zote (ikiwemo matokeo ya wanafunzi na documents zilizopakiwa). Admin anaweza kuzifuta muda wake ukiisha.</p>
+                            
+                            <div class="space-y-6">
+                                <!-- Student Exam Results Management -->
+                                <div class="border-b border-slate-200 pb-6">
+                                    <h3 class="font-bold text-sm text-navy-900 mb-3"><i class="fa-solid fa-file-arrow-up text-gold-600"></i> Uploaded Student Exam Results</h3>
+                                    <div id="adminManageStudentResultsList" class="space-y-3"></div>
+                                </div>
+
+                                <!-- Visual Assets Management -->
+                                <div class="border-b border-slate-200 pb-6">
+                                    <h3 class="font-bold text-sm text-navy-900 mb-3"><i class="fa-solid fa-image text-gold-600"></i> Visual Assets (Logo & Banners)</h3>
+                                    <div id="adminManageVisualAssetsList" class="grid sm:grid-cols-3 gap-4"></div>
+                                </div>
+
+                                <!-- Gallery Management -->
+                                <div class="border-b border-slate-200 pb-6">
+                                    <h3 class="font-bold text-sm text-navy-900 mb-3"><i class="fa-solid fa-camera text-gold-600"></i> Gallery Photos</h3>
+                                    <div id="adminManageGalleryList" class="grid sm:grid-cols-2 gap-4"></div>
+                                </div>
+
+                                <!-- News & Announcements Management -->
+                                <div class="border-b border-slate-200 pb-6">
+                                    <h3 class="font-bold text-sm text-navy-900 mb-3"><i class="fa-solid fa-newspaper text-gold-600"></i> News, Events & Announcements</h3>
+                                    <div id="adminManageNewsList" class="space-y-3"></div>
+                                </div>
+
+                                <!-- Joining Instructions Management -->
+                                <div class="border-b border-slate-200 pb-6">
+                                    <h3 class="font-bold text-sm text-navy-900 mb-3"><i class="fa-solid fa-file-pdf text-gold-600"></i> Joining Instructions Documents</h3>
+                                    <div id="adminManageJoiningList" class="space-y-3"></div>
+                                </div>
+
+                                <!-- Academic Results Management -->
+                                <div>
+                                    <h3 class="font-bold text-sm text-navy-900 mb-3"><i class="fa-solid fa-graduation-cap text-gold-600"></i> External Academic Results Links</h3>
+                                    <div id="adminManageAcademicList" class="space-y-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Col: Received Messages Log -->
+                    <div class="space-y-8">
+                        <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-200">
+                            <h2 class="text-xl font-bold text-navy-900 mb-4 flex items-center justify-between">
+                                <span><i class="fa-solid fa-inbox text-gold-600"></i> Received Messages</span>
+                                <span id="msgCountBadge" class="px-2.5 py-0.5 rounded-full bg-gold-500/20 text-gold-600 text-xs font-bold">0</span>
+                            </h2>
+                            <p class="text-slate-500 text-xs mb-6">Ujumbe uliotumwa na wageni.</p>
+                            <div id="adminMessagesList" class="space-y-4 max-h-[600px] overflow-y-auto custom-scrollbar">
+                                <p class="text-slate-400 text-xs text-center py-8">Inapakia ujumbe...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-navy-900 text-white pt-16 pb-8 border-t border-gold-500/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-12 mb-12">
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <img id="footerLogoImg" src="https://placehold.co/80x80/0B192C/C5A059?text=RSS" alt="Logo" class="w-10 h-10 rounded-full border border-gold-500 object-cover">
+                    <h3 class="font-bold text-lg">Rungwa Secondary School</h3>
+                </div>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Reg. No. S/2598 • NECTA No. 2795<br>"Education for Liberation"<br>S.L.P 70, Itigi<br>Kata ya Rungwa, Halmashauri ya Itigi<br>Singida, Tanzania</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-gold-400 text-sm uppercase tracking-wider mb-4">Quick Links</h3>
+                <div class="space-y-2 text-xs">
+                    <button onclick="switchView('home')" class="block text-slate-300 hover:text-gold-400">Home</button>
+                    <button onclick="switchView('about')" class="block text-slate-300 hover:text-gold-400">About Us</button>
+                    <button onclick="switchView('taaluma')" class="block text-slate-300 hover:text-gold-400">Taaluma & NECTA</button>
+                    <button onclick="switchView('news')" class="block text-slate-300 hover:text-gold-400">News & Events</button>
+                    <button onclick="switchView('contact')" class="block text-slate-300 hover:text-gold-400">Contact Us</button>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-bold text-gold-400 text-sm uppercase tracking-wider mb-4">Contact</h3>
+                <p class="text-slate-300 text-xs mb-2">📞 <a href="tel:0622036521" class="hover:underline">0622036521</a></p>
+                <p class="text-slate-300 text-xs mb-4">✉️ <a href="mailto:secondaryrungwa@gmail.com" class="hover:underline">secondaryrungwa@gmail.com</a></p>
+                <div class="pt-2">
+                    <button onclick="openAdminLoginModal()" class="px-4 py-2 bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold rounded-xl text-xs transition shadow">Admin Portal Login</button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-800 pt-6 text-center text-xs text-slate-400">
+            <p>© <span id="currentYear"></span> Rungwa Secondary School. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ADMIN LOGIN MODAL -->
+    <div id="adminLoginModal" class="fixed inset-0 z-50 bg-navy-900/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white max-w-md w-full p-8 sm:p-10 rounded-3xl shadow-2xl border border-slate-200 relative">
+            <button onclick="closeAdminLoginModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-600 text-xl font-bold"><i class="fa-solid fa-xmark"></i></button>
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-navy-900 text-gold-400 rounded-2xl mx-auto flex items-center justify-center text-2xl font-bold mb-4 shadow">🔒</div>
+                <h3 class="text-2xl font-extrabold text-navy-900">Administrator Login</h3>
+                <p class="text-slate-500 text-xs mt-1">Ingiza nenosiri sahihi ili kufungua dashboard ya usimamizi.</p>
+            </div>
+            <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Password</label>
+                    <input type="password" id="adminPasswordInput" required class="w-full px-4 py-3.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-gold-500 focus:outline-none" placeholder="Ingiza nenosiri...">
+                </div>
+                <button type="submit" class="w-full py-3.5 bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold rounded-xl text-xs uppercase tracking-wider transition shadow">Login to Dashboard →</button>
+                <div id="adminLoginError" class="text-red-600 text-xs text-center font-semibold"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Supabase Configuration
+        // ⚠️ WEKA HAPA "anon public" key SAHIHI kutoka: Supabase Dashboard -> Project Settings -> API -> Project API keys -> anon public
+        //    Key ya chini ikiwa si sahihi, utapata error 401 (Unauthorized) kwenye console.
+        const SUPABASE_URL = "https://ppgnerclxuxwwcdfuypm.supabase.co";
+        const SUPABASE_ANON_KEY = "sb_publishable_WZrzRffjgfiin9I_4lBVkQ_4ddd_lSG";
+        
+        let supabaseClient = null;
+        try {
+            supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        } catch (e) {
+            console.error("Supabase client init failed:", e);
+        }
+
+        let appState = {
+            logo: null,
+            schoolLifeImg: null,
+            subpageBanner: null,
+            gallery: [],
+            news: [],
+            events: [],
+            announcements: [],
+            joiningFiles: [],
+            academicResults: [],
+            studentResults: [],
+            messages: []
+        };
+
+        const STORAGE_KEY = "rungwa_school_portal_supabase_sync_v2";
+
+        // Muunganisho wa seva unapokataliwa. Haitaji kuonyesha jina la mtoa huduma;
+        // tunaweka ujumbe wa jumla tu na maelezo kamili yanabaki kwenye console.
+        function showSupabaseBanner(error) {
+            console.error('Connection notice:', error);
+            let bar = document.getElementById('supabaseErrorBar');
+            if (!bar) {
+                bar = document.createElement('div');
+                bar.id = 'supabaseErrorBar';
+                bar.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#b91c1c;color:#fff;padding:12px 16px;font-size:13px;font-family:Inter,sans-serif;box-shadow:0 -4px 12px rgba(0,0,0,.25);';
+                document.body.appendChild(bar);
+            }
+            bar.innerHTML = '<strong>⚠️ Tatizo la muunganisho wa mtandao.</strong> Tafadhali hakikisha una intaneti kisha jaribu tena.';
+        }
+        function hideSupabaseBanner() {
+            const bar = document.getElementById('supabaseErrorBar');
+            if (bar) bar.remove();
+        }
+
+        // Load data from Supabase tables (or fallback to localStorage)
+        async function loadStateFromSupabase() {
+            try {
+                if (!supabaseClient) throw new Error("Supabase not available");
+
+                const [settingsRes, contentRes, galleryRes, messagesRes, joiningRes, academicRes, studentRes] = await Promise.all([
+                    supabaseClient.from('rungwa_settings').select('*'),
+                    supabaseClient.from('rungwa_content').select('*'),
+                    supabaseClient.from('rungwa_gallery').select('*'),
+                    supabaseClient.from('rungwa_messages').select('*'),
+                    supabaseClient.from('rungwa_joining').select('*'),
+                    supabaseClient.from('rungwa_academic').select('*'),
+                    supabaseClient.from('rungwa_student_results').select('*')
+                ]);
+
+                // Detect real connection problems (supabase-js resolves even on 401/403 instead of throwing)
+                const firstError = [settingsRes, contentRes, galleryRes, messagesRes, joiningRes, academicRes, studentRes]
+                    .map(r => r && r.error).find(Boolean);
+                if (firstError) {
+                    showSupabaseBanner(firstError);
+                    throw new Error(firstError.message || 'Supabase request rejected');
+                } else {
+                    hideSupabaseBanner();
+                }
+
+                if (settingsRes.data && settingsRes.data.length > 0) {
+                    settingsRes.data.forEach(row => {
+                        if (row.key === 'logo') appState.logo = row.value;
+                        if (row.key === 'schoolLifeImg') appState.schoolLifeImg = row.value;
+                        if (row.key === 'subpageBanner') appState.subpageBanner = row.value;
+                    });
+                }
+
+                if (contentRes.data) {
+                    // Normalize Supabase column names -> internal field names used by the renderers
+                    const normalizeContent = (row) => ({
+                        id: row.id || Date.now(),
+                        category: row.category,
+                        title: row.title,
+                        desc: row.description,
+                        image: row.image,
+                        docUrl: row.doc_url,
+                        docName: row.doc_name,
+                        date: row.date || new Date().toLocaleDateString()
+                    });
+                    // Newest first (matches the unshift order used when publishing)
+                    const sortNewest = (a, b) => (b.id || 0) - (a.id || 0);
+                    appState.news = contentRes.data.filter(item => item.category === 'latest').map(normalizeContent).sort(sortNewest);
+                    appState.events = contentRes.data.filter(item => item.category === 'events').map(normalizeContent).sort(sortNewest);
+                    appState.announcements = contentRes.data.filter(item => item.category === 'announcements').map(normalizeContent).sort(sortNewest);
+                }
+
+                if (galleryRes.data) {
+                    appState.gallery = galleryRes.data.map(item => ({
+                        id: item.id || Date.now(),
+                        url: item.url,
+                        name: item.name || 'photo',
+                        desc: item.description
+                    }));
+                }
+
+                if (messagesRes.data) {
+                    appState.messages = messagesRes.data.map(m => ({
+                        id: m.id || Date.now(),
+                        name: m.name,
+                        email: m.email,
+                        phone: m.phone,
+                        subject: m.subject,
+                        message: m.message,
+                        date: m.date || new Date().toLocaleDateString()
+                    })).sort((a, b) => (b.id || 0) - (a.id || 0));
+                }
+
+                if (joiningRes.data) {
+                    appState.joiningFiles = joiningRes.data.map(j => ({
+                        id: j.id || Date.now(),
+                        year: j.year,
+                        name: j.name,
+                        dataUrl: j.data_url
+                    }));
+                }
+
+                if (academicRes.data) {
+                    appState.academicResults = academicRes.data.map(a => ({
+                        id: a.id || Date.now(),
+                        title: a.title,
+                        url: a.url
+                    }));
+                }
+
+                if (studentRes.data) {
+                    appState.studentResults = studentRes.data.map(s => ({
+                        id: s.id || Date.now(),
+                        formLevel: s.form_level,
+                        title: s.title,
+                        fileName: s.file_name,
+                        dataUrl: s.data_url,
+                        date: s.date || new Date().toLocaleDateString()
+                    })).sort((a, b) => (b.id || 0) - (a.id || 0));
+                }
+
+                console.log("Data loaded successfully.");
+            } catch (err) {
+                console.warn("Data fetch notice:", err.message);
+            }
+            renderDynamicContent();
+            renderAdminDashboard();
+        }
+
+        function saveStateLocally() {
+            // Hakuna uhifadhi wa localStorage tena. Data zote zinahifadhiwa kwenye
+            // seva ya mbali pekee (backend). appState hubaki kama nakala ya muda
+            // ndani ya kumbukumbu (RAM) wakati ukurasa umefunguliwa tu.
+            // Function hii imeachwa (no-op) ili kuepuka error ya quota.
+            return;
+        }
+
+        async function syncSettingToSupabase(key, value) {
+            saveStateLocally();
+            if (!supabaseClient) return;
+            try {
+                const { error } = await supabaseClient.from('rungwa_settings').upsert({ key, value });
+                if (error) { showSupabaseBanner(error); return; }
+                hideSupabaseBanner();
+            } catch (e) { console.error("Supabase setting upsert error:", e); showSupabaseBanner(e); }
+        }
+
+        async function syncContentToSupabase(category, title, desc, image, docUrl, docName, id) {
+            saveStateLocally();
+            if (!supabaseClient) return;
+            try {
+                const { error } = await supabaseClient.from('rungwa_content').insert({
+                    id, category, title, description: desc, image, doc_url: docUrl, doc_name: docName, date: new Date().toLocaleDateString()
+                });
+                if (error) { showSupabaseBanner(error); return; }
+                hideSupabaseBanner();
+            } catch (e) { console.error("Supabase content insert error:", e); showSupabaseBanner(e); }
+        }
+
+        async function syncGalleryToSupabase(id, url, name, desc) {
+            saveStateLocally();
+            if (!supabaseClient) return;
+            try {
+                const { error } = await supabaseClient.from('rungwa_gallery').insert({ id, url, name, description: desc });
+                if (error) { showSupabaseBanner(error); return; }
+                hideSupabaseBanner();
+            } catch (e) { console.error("Supabase gallery insert error:", e); showSupabaseBanner(e); }
+        }
+
+        async function syncJoiningToSupabase(id, year, name, dataUrl) {
+            saveStateLocally();
+            if (!supabaseClient) return;
+            try {
+                const { error } = await supabaseClient.from('rungwa_joining').insert({ id, year, name, data_url: dataUrl });
+                if (error) { showSupabaseBanner(error); return; }
+                hideSupabaseBanner();
+            } catch (e) { console.error("Supabase joining insert error:", e); showSupabaseBanner(e); }
+        }
+
+        async function syncAcademicToSupabase(id, title, url) {
+            saveStateLocally();
+            if (!supabaseClient) return;
+            try {
+                const { error } = await supabaseClient.from('rungwa_academic').insert({ id, title, url });
+                if (error) { showSupabaseBanner(error); return; }
+                hideSupabaseBanner();
+            } catch (e) { console.error("Supabase academic insert error:", e); showSupabaseBanner(e); }
+        }
+
+        async function syncStudentResultToSupabase(id, formLevel, title, fileName, dataUrl) {
+            saveStateLocally();
+            if (!supabaseClient) return;
+            try {
+                const { error } = await supabaseClient.from('rungwa_student_results').insert({
+                    id, form_level: formLevel, title, file_name: fileName, data_url: dataUrl, date: new Date().toLocaleDateString()
+                });
+                if (error) { showSupabaseBanner(error); return; }
+                hideSupabaseBanner();
+            } catch (e) { console.error("Supabase student results insert error:", e); showSupabaseBanner(e); }
+        }
+
+        async function syncMessageToSupabase(msgObj) {
+            saveStateLocally();
+            if (!supabaseClient) return;
+            try {
+                const { error } = await supabaseClient.from('rungwa_messages').insert({
+                    id: msgObj.id,
+                    name: msgObj.name,
+                    email: msgObj.email,
+                    phone: msgObj.phone,
+                    subject: msgObj.subject,
+                    message: msgObj.message,
+                    date: msgObj.date
+                });
+                if (error) { showSupabaseBanner(error); return; }
+                hideSupabaseBanner();
+            } catch (e) { console.error("Supabase message insert error:", e); showSupabaseBanner(e); }
+        }
+
+        async function deleteRecordFromSupabase(table, idKey, idVal) {
+            saveStateLocally();
+            if (!supabaseClient) return;
+            try {
+                await supabaseClient.from(table).delete().eq(idKey, idVal);
+            } catch (e) { console.error(`Supabase delete error on ${table}:`, e); }
+        }
+
+        function switchView(viewId) {
+            document.querySelectorAll('.spa-view').forEach(el => el.classList.add('hidden'));
+            const target = document.getElementById('view-' + viewId);
+            if (target) {
+                target.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            document.querySelectorAll('.nav-link').forEach(btn => {
+                if (btn.getAttribute('data-target') === viewId) {
+                    btn.classList.add('text-gold-400', 'bg-gold-500/25');
+                } else {
+                    btn.classList.remove('text-gold-400', 'bg-gold-500/25');
+                }
+            });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function switchNewsTab(tabName) {
+            document.querySelectorAll('.news-tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.news-tab-btn').forEach(btn => {
+                btn.classList.remove('bg-navy-900', 'text-white', 'shadow');
+                btn.classList.add('bg-slate-200', 'text-slate-700');
+            });
+
+            document.getElementById('newsTab-' + tabName).classList.remove('hidden');
+            const activeBtn = document.getElementById('tabBtn-' + tabName);
+            activeBtn.classList.remove('bg-slate-200', 'text-slate-700');
+            activeBtn.classList.add('bg-navy-900', 'text-white', 'shadow');
+        }
+
+        function alertMessage(msg) {
+            const div = document.createElement('div');
+            div.className = 'fixed bottom-5 right-5 z-50 bg-navy-900 text-white px-6 py-4 rounded-2xl shadow-2xl border border-gold-500 text-sm font-semibold flex items-center gap-3 animate-bounce';
+            div.innerHTML = `<i class="fa-solid fa-circle-check text-gold-400 text-lg"></i> <span>${msg}</span>`;
+            document.body.appendChild(div);
+            setTimeout(() => div.remove(), 4500);
+        }
+
+        function openAdminLoginModal() {
+            document.getElementById('adminLoginModal').classList.remove('hidden');
+        }
+        function closeAdminLoginModal() {
+            document.getElementById('adminLoginModal').classList.add('hidden');
+            document.getElementById('adminPasswordInput').value = '';
+            document.getElementById('adminLoginError').textContent = '';
+        }
+
+        function handleAdminLogin(event) {
+            event.preventDefault();
+            const pass = document.getElementById('adminPasswordInput').value;
+            if (pass === "rungwe20") {
+                closeAdminLoginModal();
+                switchView('admin');
+                renderAdminDashboard();
+                alertMessage("Umeingia kwa mafanikio kwenye Admin Dashboard!");
+            } else {
+                document.getElementById('adminLoginError').textContent = "Nenosiri si sahihi! Jaribu tena (rungwe20).";
+            }
+        }
+
+        function logoutAdmin() {
+            switchView('home');
+            alertMessage("Umetoka kwenye Admin Dashboard.");
+        }
+
+        async function handleContactSubmission(event) {
+            event.preventDefault();
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+            const phone = document.getElementById('contactPhone').value;
+            const subject = document.getElementById('contactSubject').value;
+            const message = document.getElementById('contactMessageText').value;
+
+            const msgObj = {
+                id: Date.now(),
+                name, email, phone, subject, message,
+                date: new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString()
+            };
+
+            appState.messages.unshift(msgObj);
+            saveStateLocally();
+            await syncMessageToSupabase(msgObj);
+
+            const status = document.getElementById('contactFormStatus');
+            status.textContent = "✅ Ujumbe wako umetumwa kwa mafanikio!";
+            status.className = "text-center text-sm font-semibold text-green-600";
+            document.getElementById('contactFormSpa').reset();
+            alertMessage("Ujumbe umehifadhiwa kikamilifu!");
+            renderAdminDashboard();
+        }
+
+        // Post News/Event/Announcement with Optional Image and Optional Document Upload
+        async function handleAdminPublishContent(event) {
+            event.preventDefault();
+            const category = document.getElementById('adminPostCategory').value;
+            const title = document.getElementById('adminPostTitle').value;
+            const desc = document.getElementById('adminPostDesc').value;
+            const imageFile = document.getElementById('adminPostImage').files[0];
+            const docFile = document.getElementById('adminPostDoc').files[0];
+
+            const itemId = Date.now();
+
+            async function processFiles(imageUrl = null, docUrl = null, docName = null) {
+                const item = {
+                    id: itemId,
+                    title,
+                    desc,
+                    image: imageUrl,
+                    docUrl,
+                    docName,
+                    date: new Date().toLocaleDateString()
+                };
+
+                if (category === 'latest') appState.news.unshift(item);
+                else if (category === 'events') appState.events.unshift(item);
+                else if (category === 'announcements') appState.announcements.unshift(item);
+
+                saveStateLocally();
+                await syncContentToSupabase(category, title, desc, imageUrl, docUrl, docName, itemId);
+                renderDynamicContent();
+                renderAdminDashboard();
+                event.target.reset();
+                alertMessage("✅ Taarifa imewekwa kwa mafanikio!");
+            }
+
+            let imageUrl = null;
+            let docUrl = null;
+            let docName = null;
+
+            let pendingReads = 0;
+            if (imageFile) pendingReads++;
+            if (docFile) pendingReads++;
+
+            if (pendingReads === 0) {
+                await processFiles();
+                return;
+            }
+
+            if (imageFile) {
+                const reader = new FileReader();
+                reader.onload = async function(e) {
+                    imageUrl = e.target.result;
+                    pendingReads--;
+                    if (pendingReads === 0) await processFiles(imageUrl, docUrl, docName);
+                };
+                reader.readAsDataURL(imageFile);
+            }
+
+            if (docFile) {
+                const readerDoc = new FileReader();
+                readerDoc.onload = async function(e) {
+                    docUrl = e.target.result;
+                    docName = docFile.name;
+                    pendingReads--;
+                    if (pendingReads === 0) await processFiles(imageUrl, docUrl, docName);
+                };
+                readerDoc.readAsDataURL(docFile);
+            }
+        }
+
+        // NEW: Upload Student Exam Results with Form Level heading
+        async function handleStudentResultUpload(event) {
+            event.preventDefault();
+            const formLevel = document.getElementById('adminResultFormLevel').value;
+            const title = document.getElementById('adminResultTitle').value;
+            const file = document.getElementById('adminResultFile').files[0];
+            const itemId = Date.now();
+
+            if (formLevel && file) {
+                const reader = new FileReader();
+                reader.onload = async function(e) {
+                    const resultObj = {
+                        id: itemId,
+                        formLevel,
+                        title,
+                        fileName: file.name,
+                        dataUrl: e.target.result,
+                        date: new Date().toLocaleDateString()
+                    };
+                    appState.studentResults.unshift(resultObj);
+                    saveStateLocally();
+                    await syncStudentResultToSupabase(itemId, formLevel, title, file.name, e.target.result);
+                    renderDynamicContent();
+                    renderAdminDashboard();
+                    event.target.reset();
+                    alertMessage("✅ Matokeo ya wanafunzi yamewekwa kikamilifu!");
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        async function handleLogoUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = async function(e) {
+                    appState.logo = e.target.result;
+                    saveStateLocally();
+                    await syncSettingToSupabase('logo', e.target.result);
+                    applyVisualAssets();
+                    renderAdminDashboard();
+                    alertMessage("✅ Logo imehifadhiwa kwa mafanikio!");
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        async function handleSchoolLifeUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = async function(e) {
+                    appState.schoolLifeImg = e.target.result;
+                    saveStateLocally();
+                    await syncSettingToSupabase('schoolLifeImg', e.target.result);
+                    applyVisualAssets();
+                    renderAdminDashboard();
+                    alertMessage("✅ School Life picha imehifadhiwa!");
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        async function handleUnifiedSubpageBannerUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = async function(e) {
+                    appState.subpageBanner = e.target.result;
+                    saveStateLocally();
+                    await syncSettingToSupabase('subpageBanner', e.target.result);
+                    applyVisualAssets();
+                    renderAdminDashboard();
+                    alertMessage("✅ Subpage Banner imehifadhiwa!");
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        async function handleGalleryUploadWithDesc(event) {
+            event.preventDefault();
+            const fileInput = document.getElementById('adminGalleryFile');
+            const descInput = document.getElementById('adminGalleryDesc');
+            const file = fileInput.files[0];
+            const description = descInput.value.trim();
+            const itemId = Date.now();
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = async function(e) {
+                    appState.gallery.push({
+                        id: itemId,
+                        url: e.target.result,
+                        name: file.name,
+                        desc: description || null
+                    });
+                    saveStateLocally();
+                    await syncGalleryToSupabase(itemId, e.target.result, file.name, description || null);
+                    renderDynamicContent();
+                    renderAdminDashboard();
+                    event.target.reset();
+                    alertMessage("✅ Picha ya gallery imehifadhiwa!");
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        async function handleJoiningUpload(event) {
+            event.preventDefault();
+            const year = document.getElementById('adminJoiningYear').value;
+            const file = document.getElementById('adminJoiningFile').files[0];
+            const itemId = Date.now();
+            if (year && file) {
+                const reader = new FileReader();
+                reader.onload = async function(e) {
+                    appState.joiningFiles.push({ id: itemId, year, name: file.name, dataUrl: e.target.result });
+                    saveStateLocally();
+                    await syncJoiningToSupabase(itemId, year, file.name, e.target.result);
+                    renderDynamicContent();
+                    renderAdminDashboard();
+                    event.target.reset();
+                    alertMessage("✅ Joining Instructions PDF imehifadhiwa!");
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        async function handleAcademicUpload(event) {
+            event.preventDefault();
+            const title = document.getElementById('adminAcademicTitle').value;
+            const url = document.getElementById('adminAcademicUrl').value;
+            const itemId = Date.now();
+            appState.academicResults.push({ id: itemId, title, url });
+            saveStateLocally();
+            await syncAcademicToSupabase(itemId, title, url);
+            renderDynamicContent();
+            renderAdminDashboard();
+            event.target.reset();
+            alertMessage("✅ Academic result link imeongezwa!");
+        }
+
+        function applyVisualAssets() {
+            if (appState.logo) {
+                document.getElementById('navLogoImg').src = appState.logo;
+                document.getElementById('footerLogoImg').src = appState.logo;
+            } else {
+                document.getElementById('navLogoImg').src = "https://placehold.co/100x100/0B192C/C5A059?text=RSS";
+                document.getElementById('footerLogoImg').src = "https://placehold.co/80x80/0B192C/C5A059?text=RSS";
+            }
+
+            if (appState.schoolLifeImg) {
+                document.getElementById('homeSectionImg').src = appState.schoolLifeImg;
+            } else {
+                document.getElementById('homeSectionImg').src = "https://placehold.co/800x600/1E3E62/ffffff?text=Rungwa+School+Life";
+            }
+
+            if (appState.subpageBanner) {
+                document.querySelectorAll('.subpage-hero').forEach(el => {
+                    el.style.backgroundImage = `linear-gradient(rgba(5, 12, 22, 0.85), rgba(11, 25, 44, 0.9)), url('${appState.subpageBanner}')`;
+                });
+            } else {
+                document.querySelectorAll('.subpage-hero').forEach(el => {
+                    el.style.backgroundImage = `linear-gradient(rgba(5, 12, 22, 0.85), rgba(11, 25, 44, 0.9)), url('https://placehold.co/1920x600/0b192c/ffffff?text=Rungwa+Secondary+School')`;
+                });
+            }
+        }
+
+        function renderDynamicContent() {
+            applyVisualAssets();
+
+            // Gallery
+            const grid = document.getElementById('homeGalleryGrid');
+            if (appState.gallery.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-12 text-slate-400 text-sm">Hakuna picha zilizowekwa bado kwenye gallery. Tumia Admin Portal kuweka picha.</div>`;
+            } else {
+                grid.innerHTML = appState.gallery.map(img => {
+                    if (!img.desc) {
+                        return `<div class="rounded-3xl overflow-hidden shadow-xl border-4 border-white card-hover"><img src="${img.url}" alt="Gallery Photo" class="w-full h-72 object-cover"></div>`;
+                    } else {
+                        return `<div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-200 card-hover flex flex-col"><img src="${img.url}" alt="${img.desc}" class="w-full h-60 object-cover"><div class="p-6"><h3 class="font-bold text-navy-900 text-lg">${img.desc}</h3></div></div>`;
+                    }
+                }).join('');
+            }
+
+            // News
+            const newsContainer = document.getElementById('latestNewsGrid');
+            if (appState.news.length === 0) {
+                newsContainer.innerHTML = `<p class="text-slate-400 text-xs py-8 col-span-full text-center">Hakuna habari mpya zilizowekwa.</p>`;
+            } else {
+                newsContainer.innerHTML = appState.news.map(item => `
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden flex flex-col card-hover">
+                        ${item.image ? `<img src="${item.image}" alt="${item.title}" class="w-full h-48 object-cover">` : `<div class="h-48 bg-navy-900 flex items-center justify-center text-4xl text-gold-400">📰</div>`}
+                        <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+                            <div>
+                                <span class="text-xs font-bold text-gold-600 bg-gold-500/10 px-3 py-1 rounded-full">${item.date}</span>
+                                <h3 class="text-xl font-bold text-navy-900 mt-3 mb-2">${item.title}</h3>
+                                ${item.desc ? `<p class="text-slate-600 text-sm leading-relaxed mb-4">${item.desc}</p>` : ''}
+                                ${item.docUrl ? `<a href="${item.docUrl}" download="${item.docName || 'document.pdf'}" class="inline-flex items-center gap-2 text-xs font-bold text-navy-900 bg-gold-500 hover:bg-gold-600 px-4 py-2 rounded-xl transition shadow mb-3"><i class="fa-solid fa-file-arrow-down"></i> Pakua Document (${item.docName || 'File'})</a>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Events
+            const eventsContainer = document.getElementById('eventsGrid');
+            if (appState.events.length === 0) {
+                eventsContainer.innerHTML = `<p class="text-slate-400 text-xs py-8 col-span-full text-center">Hakuna matukio yaliyowekwa.</p>`;
+            } else {
+                eventsContainer.innerHTML = appState.events.map(item => `
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden flex flex-col card-hover">
+                        ${item.image ? `<img src="${item.image}" alt="${item.title}" class="w-full h-40 object-cover">` : ''}
+                        <div class="p-6 sm:p-8 flex gap-4 items-start">
+                            <div class="bg-navy-900 text-gold-400 p-4 rounded-2xl text-center font-bold shadow">
+                                <span class="block text-xl">NEW</span>
+                                <span class="text-[10px] uppercase">EVT</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-navy-900 text-lg mb-1">${item.title}</h3>
+                                ${item.desc ? `<p class="text-xs text-slate-600 mb-2">${item.desc}</p>` : ''}
+                                ${item.docUrl ? `<a href="${item.docUrl}" download="${item.docName || 'document.pdf'}" class="inline-flex items-center gap-1.5 text-xs font-bold text-gold-600 hover:underline"><i class="fa-solid fa-file-arrow-down"></i> ${item.docName || 'Download File'}</a>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Announcements
+            const announcementsContainer = document.getElementById('announcementsList');
+            if (appState.announcements.length === 0) {
+                announcementsContainer.innerHTML = `<p class="text-slate-400 text-xs py-8 text-center">Hakuna matangazo yaliyowekwa.</p>`;
+            } else {
+                announcementsContainer.innerHTML = appState.announcements.map(item => `
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden card-hover">
+                        ${item.image ? `<img src="${item.image}" alt="${item.title}" class="w-full h-48 object-cover">` : ''}
+                        <div class="p-6 sm:p-8 flex items-start gap-4">
+                            <div class="text-3xl text-gold-600">📢</div>
+                            <div class="flex-1">
+                                <span class="text-xs font-bold text-gold-600 bg-gold-500/10 px-3 py-1 rounded-full">${item.date}</span>
+                                <h3 class="font-bold text-navy-900 text-lg mt-2 mb-1">${item.title}</h3>
+                                ${item.desc ? `<p class="text-slate-600 text-sm mb-3">${item.desc}</p>` : ''}
+                                ${item.docUrl ? `<a href="${item.docUrl}" download="${item.docName || 'document.pdf'}" class="inline-flex items-center gap-2 text-xs font-bold text-navy-900 bg-gold-500 hover:bg-gold-600 px-4 py-2 rounded-xl transition shadow"><i class="fa-solid fa-file-arrow-down"></i> Pakua Announcement File (${item.docName || 'PDF'})</a>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Joining Instructions
+            const joiningContainer = document.getElementById('joiningInstructionsList');
+            if (appState.joiningFiles.length === 0) {
+                joiningContainer.innerHTML = `<div class="col-span-full text-slate-400 text-xs text-center py-4">Hakuna joining instructions zilizopakiwa bado.</div>`;
+            } else {
+                joiningContainer.innerHTML = appState.joiningFiles.map(doc => `
+                    <div class="bg-navy-800 p-6 rounded-2xl border border-slate-700 flex justify-between items-center shadow">
+                        <div>
+                            <div class="text-gold-400 font-bold text-lg">${doc.year}</div>
+                            <p class="text-xs text-slate-300">${doc.name}</p>
+                        </div>
+                        <a href="${doc.dataUrl}" download="${doc.name}" class="px-4 py-2 bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold text-xs rounded-xl transition shadow">Download PDF ↓</a>
+                    </div>
+                `).join('');
+            }
+
+            // Public Student Results (on Taaluma View)
+            const publicStudentResultsSection = document.getElementById('publicStudentResultsSection');
+            const publicStudentResultsGrid = document.getElementById('publicStudentResultsGrid');
+            if (appState.studentResults.length > 0) {
+                publicStudentResultsSection.classList.remove('hidden');
+                publicStudentResultsGrid.innerHTML = appState.studentResults.map(res => `
+                    <div class="bg-white p-6 rounded-2xl shadow border border-slate-200">
+                        <span class="inline-block text-[11px] font-extrabold text-gold-600 bg-gold-500/10 px-3 py-1 rounded-full mb-2">${res.formLevel}</span>
+                        <h4 class="font-bold text-navy-900 text-lg mb-1">${res.title}</h4>
+                        <p class="text-xs text-slate-500 mb-4">File: ${res.fileName} (${res.date})</p>
+                        <a href="${res.dataUrl}" download="${res.fileName}" class="inline-flex items-center gap-2 text-xs font-bold text-navy-900 bg-gold-500 hover:bg-gold-600 px-4 py-2 rounded-xl transition shadow">Pakua Matokeo ↓</a>
+                    </div>
+                `).join('');
+            } else {
+                publicStudentResultsSection.classList.add('hidden');
+            }
+
+            // Academic Results Links
+            if (appState.academicResults.length > 0) {
+                const container = document.getElementById('dynamicAcademicList');
+                const wrap = document.getElementById('dynamicAcademicResultsContainer');
+                wrap.classList.remove('hidden');
+                container.innerHTML = appState.academicResults.map(res => `
+                    <div class="bg-white p-6 rounded-2xl shadow border border-slate-200">
+                        <div class="text-gold-600 font-extrabold text-lg mb-1">NECTA</div>
+                        <h4 class="font-bold text-navy-900 mb-2">${res.title}</h4>
+                        <p class="text-xs text-slate-600 mb-4">Rasilimali ya matokeo ya mitihani.</p>
+                        <a href="${res.url}" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-navy-900 bg-gold-500 hover:bg-gold-600 px-4 py-2 rounded-xl transition">Fungua Link ↗</a>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Deletion & Management functions for Admin
+        async function deleteVisualAsset(key) {
+            if (key === 'logo') appState.logo = null;
+            else if (key === 'schoolLifeImg') appState.schoolLifeImg = null;
+            else if (key === 'subpageBanner') appState.subpageBanner = null;
+
+            saveStateLocally();
+            await syncSettingToSupabase(key, null);
+            renderDynamicContent();
+            renderAdminDashboard();
+            alertMessage("🗑️ Asset imefutwa kwa mafanikio!");
+        }
+
+        async function deleteGalleryPhoto(id) {
+            appState.gallery = appState.gallery.filter(g => g.id !== id);
+            saveStateLocally();
+            await deleteRecordFromSupabase('rungwa_gallery', 'id', id);
+            renderDynamicContent();
+            renderAdminDashboard();
+            alertMessage("🗑️ Picha imefutwa kwenye gallery!");
+        }
+
+        async function deletePost(id, category) {
+            if (category === 'latest') appState.news = appState.news.filter(n => n.id !== id);
+            else if (category === 'events') appState.events = appState.events.filter(e => e.id !== id);
+            else if (category === 'announcements') appState.announcements = appState.announcements.filter(a => a.id !== id);
+
+            saveStateLocally();
+            await deleteRecordFromSupabase('rungwa_content', 'id', id);
+            renderDynamicContent();
+            renderAdminDashboard();
+            alertMessage("🗑️ Taarifa imefutwa!");
+        }
+
+        async function deleteJoiningDoc(id) {
+            appState.joiningFiles = appState.joiningFiles.filter(j => j.id !== id);
+            saveStateLocally();
+            await deleteRecordFromSupabase('rungwa_joining', 'id', id);
+            renderDynamicContent();
+            renderAdminDashboard();
+            alertMessage("🗑️ Joining instruction imefutwa!");
+        }
+
+        async function deleteAcademicLink(id) {
+            appState.academicResults = appState.academicResults.filter(a => a.id !== id);
+            saveStateLocally();
+            await deleteRecordFromSupabase('rungwa_academic', 'id', id);
+            renderDynamicContent();
+            renderAdminDashboard();
+            alertMessage("🗑️ Academic link imefutwa!");
+        }
+
+        async function deleteStudentResultFile(id) {
+            appState.studentResults = appState.studentResults.filter(s => s.id !== id);
+            saveStateLocally();
+            await deleteRecordFromSupabase('rungwa_student_results', 'id', id);
+            renderDynamicContent();
+            renderAdminDashboard();
+            alertMessage("🗑️ Matokeo ya wanafunzi yamefutwa (expired/removed)!");
+        }
+
+        function renderAdminDashboard() {
+            document.getElementById('statNewsCount').textContent = appState.news.length + appState.announcements.length;
+            document.getElementById('statEventsCount').textContent = appState.events.length;
+            document.getElementById('statMessagesCount').textContent = appState.messages.length;
+            document.getElementById('statJoiningCount').textContent = appState.joiningFiles.length;
+            document.getElementById('msgCountBadge').textContent = appState.messages.length;
+
+            // Student Exam Results Management List
+            const studentResList = document.getElementById('adminManageStudentResultsList');
+            if (appState.studentResults.length === 0) {
+                studentResList.innerHTML = `<p class="text-xs text-slate-400">Hakuna matokeo ya wanafunzi yaliyopakiwa bado.</p>`;
+            } else {
+                studentResList.innerHTML = appState.studentResults.map(res => `
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex justify-between items-center text-xs">
+                        <div>
+                            <span class="font-bold text-gold-600">${res.formLevel}</span>
+                            <h4 class="font-bold text-navy-900">${res.title}</h4>
+                            <span class="text-[10px] text-slate-500">${res.fileName}</span>
+                        </div>
+                        <button onclick="deleteStudentResultFile(${res.id})" class="px-3 py-1.5 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition"><i class="fa-solid fa-trash"></i> Futa File</button>
+                    </div>
+                `).join('');
+            }
+
+            // Visual Assets Management List
+            const visualList = document.getElementById('adminManageVisualAssetsList');
+            visualList.innerHTML = `
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-center">
+                    <p class="text-xs font-bold mb-2">Logo</p>
+                    ${appState.logo ? `<button onclick="deleteVisualAsset('logo')" class="px-2 py-1 bg-red-600 text-white rounded text-[10px]">Futa Logo</button>` : `<span class="text-[10px] text-slate-400">Default</span>`}
+                </div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-center">
+                    <p class="text-xs font-bold mb-2">School Life Frame</p>
+                    ${appState.schoolLifeImg ? `<button onclick="deleteVisualAsset('schoolLifeImg')" class="px-2 py-1 bg-red-600 text-white rounded text-[10px]">Futa Picha</button>` : `<span class="text-[10px] text-slate-400">Default</span>`}
+                </div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-center">
+                    <p class="text-xs font-bold mb-2">Subpage Banner</p>
+                    ${appState.subpageBanner ? `<button onclick="deleteVisualAsset('subpageBanner')" class="px-2 py-1 bg-red-600 text-white rounded text-[10px]">Futa Banner</button>` : `<span class="text-[10px] text-slate-400">Default</span>`}
+                </div>
+            `;
+
+            // Gallery Management List
+            const galleryManage = document.getElementById('adminManageGalleryList');
+            if (appState.gallery.length === 0) {
+                galleryManage.innerHTML = `<p class="text-xs text-slate-400 col-span-full">Hakuna picha kwenye gallery.</p>`;
+            } else {
+                galleryManage.innerHTML = appState.gallery.map(img => `
+                    <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200">
+                        <img src="${img.url}" class="w-12 h-12 rounded-lg object-cover">
+                        <span class="text-xs truncate max-w-[120px]">${img.desc || img.name}</span>
+                        <button onclick="deleteGalleryPhoto(${img.id})" class="px-2.5 py-1 bg-red-600 text-white rounded-lg text-xs"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                `).join('');
+            }
+
+            // News Management List
+            const newsManage = document.getElementById('adminManageNewsList');
+            const allPosts = [
+                ...appState.news.map(n => ({...n, catName: 'Latest News', catKey: 'latest'})),
+                ...appState.events.map(e => ({...e, catName: 'Event', catKey: 'events'})),
+                ...appState.announcements.map(a => ({...a, catName: 'Announcement', catKey: 'announcements'}))
+            ];
+            if (allPosts.length === 0) {
+                newsManage.innerHTML = `<p class="text-xs text-slate-400">Hakuna habari zilizowekwa.</p>`;
+            } else {
+                newsManage.innerHTML = allPosts.map(p => `
+                    <div class="flex justify-between items-center p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs">
+                        <div><span class="font-bold text-gold-600">[${p.catName}]</span> ${p.title} ${p.docName ? `<span class="text-[10px] bg-blue-100 text-blue-700 px-2 py-0.5 rounded ml-2">📎 ${p.docName}</span>` : ''}</div>
+                        <button onclick="deletePost(${p.id}, '${p.catKey}')" class="px-2.5 py-1 bg-red-600 text-white rounded-lg"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                `).join('');
+            }
+
+            // Joining Instructions Management List
+            const joiningManage = document.getElementById('adminManageJoiningList');
+            if (appState.joiningFiles.length === 0) {
+                joiningManage.innerHTML = `<p class="text-xs text-slate-400">Hakuna joining instructions.</p>`;
+            } else {
+                joiningManage.innerHTML = appState.joiningFiles.map(j => `
+                    <div class="flex justify-between items-center p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs">
+                        <div><span class="font-bold text-gold-600">${j.year}</span> - ${j.name}</div>
+                        <button onclick="deleteJoiningDoc(${j.id})" class="px-2.5 py-1 bg-red-600 text-white rounded-lg"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                `).join('');
+            }
+
+            // Academic Results Management List
+            const academicManage = document.getElementById('adminManageAcademicList');
+            if (appState.academicResults.length === 0) {
+                academicManage.innerHTML = `<p class="text-xs text-slate-400">Hakuna external academic links.</p>`;
+            } else {
+                academicManage.innerHTML = appState.academicResults.map(a => `
+                    <div class="flex justify-between items-center p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs">
+                        <div><span class="font-bold text-gold-600">NECTA</span> - ${a.title}</div>
+                        <button onclick="deleteAcademicLink(${a.id})" class="px-2.5 py-1 bg-red-600 text-white rounded-lg"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                `).join('');
+            }
+
+            // Messages List
+            const msgList = document.getElementById('adminMessagesList');
+            if (appState.messages.length === 0) {
+                msgList.innerHTML = `<p class="text-slate-400 text-xs text-center py-8">Hakuna ujumbe uliopokelewa bado.</p>`;
+            } else {
+                msgList.innerHTML = appState.messages.map(m => `
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-xs space-y-1">
+                        <div class="flex justify-between font-bold text-navy-900">
+                            <span>${m.name} (${m.phone || 'Hakuna simu'})</span>
+                            <span class="text-[10px] text-slate-500">${m.date}</span>
+                        </div>
+                        <p class="text-gold-600 font-semibold">Mada: ${m.subject} | Email: ${m.email}</p>
+                        <p class="text-slate-600 mt-1">${m.message}</p>
+                    </div>
+                `).join('');
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadStateFromSupabase();
+        });
+    </script>
+</body>
+</html>
